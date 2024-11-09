@@ -16,8 +16,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+import ShowChartIcon from "@mui/icons-material/ShowChart";
+import { NavLink, NavLinkProps } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -115,6 +116,20 @@ export default function Menu({ open, onDrawerClose }: MenuProps) {
     onDrawerClose();
   };
 
+  const MyNavLink = React.forwardRef<HTMLAnchorElement, NavLinkProps>(
+    (props, ref) => (
+      <NavLink
+        ref={ref}
+        to={props.to}
+        className={({ isActive }) =>
+          `${props.className} ${isActive ? "Mui-selected" : ""}`
+        }
+      >
+        {props.children}
+      </NavLink>
+    )
+  );
+
   return (
     <Drawer variant="permanent" open={open}>
       <DrawerHeader>
@@ -130,6 +145,8 @@ export default function Menu({ open, onDrawerClose }: MenuProps) {
       <List>
         <ListItem disablePadding sx={{ display: "block" }}>
           <ListItemButton
+            component={MyNavLink}
+            to="/product"
             sx={[
               {
                 minHeight: 48,
@@ -159,7 +176,7 @@ export default function Menu({ open, onDrawerClose }: MenuProps) {
                     },
               ]}
             >
-              <InboxIcon />
+              <Inventory2OutlinedIcon />
             </ListItemIcon>
             <ListItemText
               primary="สินค้า"
@@ -173,9 +190,11 @@ export default function Menu({ open, onDrawerClose }: MenuProps) {
                     },
               ]}
             />
-            
           </ListItemButton>
+
           <ListItemButton
+            component={MyNavLink}
+            to="/report"
             sx={[
               {
                 minHeight: 48,
@@ -205,7 +224,7 @@ export default function Menu({ open, onDrawerClose }: MenuProps) {
                     },
               ]}
             >
-              <InboxIcon />
+              <ShowChartIcon />
             </ListItemIcon>
             <ListItemText
               primary="รายงาน"
@@ -219,7 +238,6 @@ export default function Menu({ open, onDrawerClose }: MenuProps) {
                     },
               ]}
             />
-            
           </ListItemButton>
         </ListItem>
       </List>
