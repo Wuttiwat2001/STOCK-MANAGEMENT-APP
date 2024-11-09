@@ -1,4 +1,4 @@
-import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Header from "./components/layouts/Header";
@@ -7,14 +7,12 @@ import LoginPage from "./components/pages/LoginPage";
 import RegisterPage from "./components/pages/RegisterPage";
 import ProductPage from "./components/pages/ProductPage";
 import ProductCreatePage from "./components/pages/ProductCreatePage";
-import ProductEditPage from "./components/pages/ProductEditPage"
+import ProductEditPage from "./components/pages/ProductEditPage";
 import ReportPage from "./components/pages/ReportPage";
-import AboutUsPage from "./components/pages/AboutUsPage";
-import { Link, Navigate, Route, RouteProps, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
 export default function App() {
-
   const [open, setOpen] = useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -47,7 +45,6 @@ export default function App() {
             <Route path="/product/create" element={<ProductCreatePage />} />
             <Route path="/product/edit/:id" element={<ProductEditPage />} />
             <Route path="/report" element={<ReportPage />} />
-            <Route path="/about-us" element={<AboutUsPage />} />
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
