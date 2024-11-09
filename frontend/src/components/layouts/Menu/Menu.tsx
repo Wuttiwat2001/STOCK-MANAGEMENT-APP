@@ -128,107 +128,100 @@ export default function Menu({ open, onDrawerClose }: MenuProps) {
       </DrawerHeader>
       <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
+        <ListItem disablePadding sx={{ display: "block" }}>
+          <ListItemButton
+            sx={[
+              {
+                minHeight: 48,
+                px: 2.5,
+              },
+              open
+                ? {
+                    justifyContent: "initial",
+                  }
+                : {
+                    justifyContent: "center",
+                  },
+            ]}
+          >
+            <ListItemIcon
               sx={[
                 {
-                  minHeight: 48,
-                  px: 2.5,
+                  minWidth: 0,
+                  justifyContent: "center",
                 },
                 open
                   ? {
-                      justifyContent: "initial",
+                      mr: 3,
                     }
                   : {
-                      justifyContent: "center",
+                      mr: "auto",
                     },
               ]}
             >
-              <ListItemIcon
-                sx={[
-                  {
-                    minWidth: 0,
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="สินค้า"
+              sx={[
+                open
+                  ? {
+                      opacity: 1,
+                    }
+                  : {
+                      opacity: 0,
+                    },
+              ]}
+            />
+            
+          </ListItemButton>
+          <ListItemButton
+            sx={[
+              {
+                minHeight: 48,
+                px: 2.5,
+              },
+              open
+                ? {
+                    justifyContent: "initial",
+                  }
+                : {
                     justifyContent: "center",
                   },
-                  open
-                    ? {
-                        mr: 3,
-                      }
-                    : {
-                        mr: "auto",
-                      },
-                ]}
-              >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText
-                primary={text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
+            ]}
+          >
+            <ListItemIcon
               sx={[
                 {
-                  minHeight: 48,
-                  px: 2.5,
+                  minWidth: 0,
+                  justifyContent: "center",
                 },
                 open
                   ? {
-                      justifyContent: "initial",
+                      mr: 3,
                     }
                   : {
-                      justifyContent: "center",
+                      mr: "auto",
                     },
               ]}
             >
-              <ListItemIcon
-                sx={[
-                  {
-                    minWidth: 0,
-                    justifyContent: "center",
-                  },
-                  open
-                    ? {
-                        mr: 3,
-                      }
-                    : {
-                        mr: "auto",
-                      },
-                ]}
-              >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText
-                primary={text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="รายงาน"
+              sx={[
+                open
+                  ? {
+                      opacity: 1,
+                    }
+                  : {
+                      opacity: 0,
+                    },
+              ]}
+            />
+            
+          </ListItemButton>
+        </ListItem>
       </List>
     </Drawer>
   );
