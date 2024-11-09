@@ -3,7 +3,12 @@ import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+import Badge from "@mui/material/Badge";
+import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
+import NotificationIcon from "@mui/icons-material/Notifications";
+import { AccountCircle } from "@mui/icons-material";
 
 const drawerWidth = 240;
 
@@ -62,8 +67,40 @@ export default function Header({ open, onDrawerOpen }: HeaderProps) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
-          Mini variant drawer
+          Stock Management
         </Typography>
+
+        <Box sx={{ flexGrow: 1 }} />
+        <Box sx={{ display: { sx: "none", md: "flex" } }}>
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
+            <Badge badgeContent={4} color="error">
+              <MailIcon />
+            </Badge>
+          </IconButton>
+
+          <IconButton
+            size="large"
+            aria-label="show 17 new notifications"
+            color="inherit"
+          >
+            <Badge badgeContent={17} color="error">
+              <NotificationIcon />
+            </Badge>
+          </IconButton>
+
+          <IconButton
+            size="large"
+            edge="end"
+            aria-label="account of current user"
+            color="inherit"
+          >
+            <AccountCircle />
+          </IconButton>
+        </Box>
       </Toolbar>
     </AppBar>
   );

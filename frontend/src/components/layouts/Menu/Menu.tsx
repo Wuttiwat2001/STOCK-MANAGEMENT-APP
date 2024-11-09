@@ -10,7 +10,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+import LayersIcon from '@mui/icons-material/Layers';
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import { NavLink, NavLinkProps } from "react-router-dom";
 
@@ -143,7 +143,7 @@ export default function Menu({ open, onDrawerClose }: MenuProps) {
                     },
               ]}
             >
-              <Inventory2OutlinedIcon />
+              <LayersIcon />
             </ListItemIcon>
             <ListItemText
               primary="สินค้า"
