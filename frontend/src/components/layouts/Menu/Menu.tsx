@@ -103,16 +103,16 @@ const Drawer = styled(MuiDrawer, {
   ],
 }));
 
-export default function Header() {
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+type MenuProps = {
+  open: boolean;
+  onDrawerClose: () => void;
+};
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+export default function Menu({ open, onDrawerClose }: MenuProps) {
+  const theme = useTheme();
 
   const handleDrawerClose = () => {
-    setOpen(false);
+    onDrawerClose();
   };
 
   return (

@@ -7,8 +7,18 @@ import Menu from "./components/layouts/Menu";
 import LoginPage from "./components/pages/LoginPage";
 import RegisterPage from "./components/pages/RegisterPage";
 import { Link, Navigate, Route, RouteProps, Routes } from "react-router-dom";
+import { useState } from "react";
 
 export default function App() {
+
+  const [open, setOpen] = useState(false);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
   const DrawerHeader = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
@@ -22,8 +32,8 @@ export default function App() {
     <>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <Header />
-        <Menu />
+        <Header open={open} onDrawerOpen={handleDrawerOpen} />
+        <Menu open={open} onDrawerClose={handleDrawerClose} />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <DrawerHeader />
           <Routes>
