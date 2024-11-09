@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-type StockCreatePageProps = {
+type ProductCreatePage = {
   //
 };
 
-class StockCreatePage extends Component<StockCreatePageProps, any> {
+class StockCreatePage extends Component<ProductCreatePage, any> {
   public render() {
     return <div>StockCreatePage</div>;
   }

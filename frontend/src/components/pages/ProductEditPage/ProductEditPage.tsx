@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-type StockEditPageProps = {
+type ProductEditPage = {
   //
 };
 
-class StockEditPage extends Component<StockEditPageProps, any> {
+class StockEditPage extends Component<ProductEditPage, any> {
   public render() {
     return <div>StockEditPage</div>;
   }
