@@ -1,4 +1,4 @@
-import { styled } from "@mui/material/styles";
+import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Header from "./components/layouts/Header";
@@ -30,8 +30,19 @@ export default function App() {
     ...theme.mixins.toolbar,
   }));
 
+  const theme = createTheme({
+    typography:{
+      fontFamily: "Kanit",
+      fontWeightLight: 300,
+      fontWeightRegular: 400,
+      fontWeightMedium: 500,
+      fontWeightBold: 700,
+
+    },
+  })
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <Header open={open} onDrawerOpen={handleDrawerOpen} />
@@ -50,6 +61,6 @@ export default function App() {
           </Routes>
         </Box>
       </Box>
-    </>
+    </ThemeProvider>
   );
 }

@@ -10,7 +10,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import LayersIcon from '@mui/icons-material/Layers';
+import LayersIcon from "@mui/icons-material/Layers";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import { NavLink, NavLinkProps } from "react-router-dom";
 

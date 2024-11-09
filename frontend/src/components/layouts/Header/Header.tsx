@@ -67,7 +67,7 @@ export default function Header({ open, onDrawerOpen }: HeaderProps) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
-          Stock Management
+          ระบบจัดการสินค้า
         </Typography>
 
         <Box sx={{ flexGrow: 1 }} />

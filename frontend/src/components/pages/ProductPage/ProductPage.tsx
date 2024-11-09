@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
-type ProductPageProps = {
-  //
-};
-
-class StockPage extends Component<ProductPageProps, any> {
-  public render() {
-    return <div>StockPage</div>;
-  }
+export default function ProductPage() {
+  return (
+    <Stack spacing={2} direction="row">
+      <Button variant="text">Text</Button>
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
+    </Stack>
+  );
 }
-
-export default StockPage;
