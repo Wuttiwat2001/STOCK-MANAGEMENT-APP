@@ -9,6 +9,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import NotificationIcon from "@mui/icons-material/Notifications";
 import { AccountCircle } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -48,6 +49,8 @@ export default function Header({ open, onDrawerOpen }: HeaderProps) {
   const handleDrawerOpen = () => {
     onDrawerOpen();
   };
+
+  const navigate = useNavigate();
 
   return (
     <AppBar position="fixed" open={open}>
@@ -97,6 +100,7 @@ export default function Header({ open, onDrawerOpen }: HeaderProps) {
             edge="end"
             aria-label="account of current user"
             color="inherit"
+            onClick={() => navigate("/login")}
           >
             <AccountCircle />
           </IconButton>

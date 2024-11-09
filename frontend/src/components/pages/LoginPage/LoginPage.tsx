@@ -1,13 +1,11 @@
-import React, { Component } from "react";
 
-type LoginPageProps = {
-  //
-};
-
-class LoginPage extends Component<LoginPageProps, any> {
-  public render() {
-    return <div>LoginPage</div>;
-  }
+import { useNavigate } from 'react-router-dom';
+export default function LoginPage() {
+  const navigate = useNavigate();
+  return (
+    <>
+      <h1>Login Page</h1>
+      <button onClick={()=> navigate("/register")}>Register</button>
+    </>
+  )
 }
-
-export default LoginPage;
